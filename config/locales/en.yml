@@ -1,0 +1,6 @@
+en:
+  app:
+    actions:
+      create: Create
+      index: Articles
+      new_article: New Article
