@@ -6,8 +6,8 @@ require "rspec/rails"
 require "shoulda/matchers"
 
 # Run codeclimate-test-reporter only in CI
-if ENV['CI']
-  require 'codeclimate-test-reporter'
+if ENV["CI"]
+  require "codeclimate-test-reporter"
   CodeClimate::TestReporter.start
 end
 
