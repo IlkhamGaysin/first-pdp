@@ -1,6 +1,6 @@
 .row
   h2
-    = I18n.t("app.actions.index")
+    = title(I18n.t("app.actions.index"))
   - articles.each do |article|
     .column
       = article.title

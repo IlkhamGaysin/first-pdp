@@ -1,5 +1,6 @@
 en:
   app:
+    name: FirstPDP
     actions:
       create: Create
       index: Articles
