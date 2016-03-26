@@ -7,7 +7,7 @@ module Users
 
     def create
       article.user = current_user
-      article.save!
+      article.save
       respond_with article, location: -> { articles_path }
     end
 
