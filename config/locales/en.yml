@@ -1,9 +1,10 @@
 en:
   app:
-    name: FirstPDP
+    name: "FirstPDP"
     actions:
-      create: Create
-      index: Articles
-      new_article: New Article
+      create: "Create"
+      index: "Articles"
+      new_article: "New Article"
     articles:
       author_prefix: "created by "
+    home: "Home"
