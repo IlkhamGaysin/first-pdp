@@ -12,7 +12,8 @@ feature "See Articles" do
   end
 
   scenario "User can see create article list" do
-    expect(page).to have_content "Articles"
+    expect(page).to have_content I18n.t "app.actions.index"
+    expect(page).to have_content I18n.t "app.actions.create"
   end
 
   scenario "User can see own articles" do
