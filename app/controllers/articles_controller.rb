@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  expose(:articles)
+  expose_decorated(:articles) { |scope| scope.includes(:user) }
 
   def index
   end
