@@ -1,7 +1,8 @@
 .row
-  h2
-    = I18n.t("app.actions.index")
-  - articles.each do |article|
-    .column
-      = article.title
-  end
+  .columns
+    h2
+      = title(I18n.t("app.actions.index"))
+    dl
+      - articles.each do |article|
+        = render article
+      end

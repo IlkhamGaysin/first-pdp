@@ -1,14 +1,13 @@
 module Users
   class ArticlesController < ApplicationController
-    before_action :authenticate_user!
-
     expose(:article, attributes: :article_attributes)
 
     def new
     end
 
     def create
-      self.article = Article.create!(article_attributes)
+      article.user = current_user
+      article.save!
       respond_with article, location: -> { articles_path }
     end
 

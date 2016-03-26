@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "Password Reset" do
   let(:new_password) { "qwe123" }
-  let(:user) { create :user }
+  let(:user) { create :user, full_name: "Test name" }
 
   def update_password
     fill_in "Enter new password", with: new_password
