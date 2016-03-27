@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy
   end
+
+  def self.local_prefixes
+    [controller_path, controller_path.split("/")[1..-1].join("/")]
+  end
 end
