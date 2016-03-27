@@ -1,0 +1,7 @@
+ul.button-group.round
+  li
+    = link_to I18n.t("app.actions.show"), article_path(article), class: "button tiny"
+
+  - if policy(article).manage?
+    li
+      = link_to I18n.t("app.actions.edit"), edit_article_path(article), class: "button tiny"

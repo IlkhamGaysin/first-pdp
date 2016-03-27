@@ -11,8 +11,8 @@ feature "See Articles" do
     visit articles_path
   end
 
-  scenario "User can see create article list" do
-    expect(page).to have_content I18n.t "app.actions.index"
+  scenario "User can see create articles list" do
+    expect(page).to have_content I18n.t "app.articles.index"
     expect(page).to have_content I18n.t "app.actions.create"
   end
 
@@ -21,6 +21,7 @@ feature "See Articles" do
     expect(page).to have_content article.description
     expect(page).to have_content decorated_article.author
   end
+
   scenario "User can see which do not belong to him" do
     expect(page).to have_content another_article.title
     expect(page).to have_content another_article.description

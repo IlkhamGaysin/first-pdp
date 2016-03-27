@@ -3,6 +3,8 @@
     = article.title
   dd
     = article.description
-  em
+  em.right
     = article.author
+
+  = render "actions", article: article
   hr
