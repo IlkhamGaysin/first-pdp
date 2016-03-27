@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   scope module: "users" do
-    resources :articles, only: %i(new create edit update)
+    resources :articles, only: %i(show new create edit update)
   end
 
   resources :articles, only: %i(index)

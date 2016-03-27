@@ -31,5 +31,9 @@ module RailsBase
 
     # Set URL options to be able to use url_for helpers
     config.action_mailer.default_url_options = { host: ENV.fetch("HOST") }
+
+    # Determines whether or not partials are looked up from a subdirectory
+    # in templates rendered from namespaced controllers.
+    config.action_view.prefix_partial_path_with_controller_namespace = false
   end
 end

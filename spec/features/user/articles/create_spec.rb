@@ -9,14 +9,14 @@ feature "Create Article" do
   end
 
   scenario "User can see create article form" do
-    expect(page).to have_content "New Article"
+    expect(page).to have_content I18n.t "app.articles.new_title"
   end
 
   scenario "User can create article" do
     fill_form(:user, article_attributes)
     click_on I18n.t "app.actions.create"
 
-    expect(page).to have_content I18n.t "app.actions.index"
+    expect(page).to have_content I18n.t "app.articles.index"
     expect(page).to have_content article_attributes[:title]
     expect(page).to have_content "Article was successfully created."
   end

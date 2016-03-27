@@ -1,6 +1,7 @@
 module Users
   class ArticlesController < ApplicationController
-    expose(:article, attributes: :article_attributes)
+    before_action :authorize_user!, only: %i(edit update)
+    expose_decorated(:article, attributes: :article_attributes)
 
     def new
     end
@@ -11,13 +12,22 @@ module Users
       respond_with article, location: -> { articles_path }
     end
 
+    def show
+    end
+
     def edit
     end
 
     def update
+      article.save
+      respond_with article
     end
 
     private
+
+    def authorize_user!
+      authorize article, :manage?
+    end
 
     def article_attributes
       params.require(:article).permit(:title, :description)
