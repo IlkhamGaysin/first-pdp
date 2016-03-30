@@ -1,0 +1,9 @@
+.medium-12.columns
+  .input-group
+    = text_field(:comment, :text, class: "js-comment-content", placeholder: I18n.t("app.comments.input_message"))
+    .js-error-container
+    .input-group-button
+      = link_to I18n.t("app.comments.add_comment"),
+                "#",
+                class: "button tiny js-create-comment-link right",
+                data: { url: comments_path, article_id: article.id }
