@@ -6,6 +6,7 @@ en:
       edit: "Edit"
       show: "Show"
       update: "Update"
+      send: "Send"
     articles:
       index: "Articles"
       new_title: "New Article"
@@ -15,4 +16,13 @@ en:
     comments:
       input_message: "Your comment"
       add_comment: "Add"
+    contacts:
+      index: "Leave us your contacts"
     home: "Home"
+    mailers:
+      contact:
+        subject: "An email to tech support"
+    contact:
+      email: "Email"
+      message: "Message"
+      name: "Name"

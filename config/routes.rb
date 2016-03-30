@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
 
   resources :articles, only: %i(index)
+  resources :contacts, only: %i(new create)
 end
