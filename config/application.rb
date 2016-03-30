@@ -34,6 +34,6 @@ module RailsBase
 
     # Determines whether or not partials are looked up from a subdirectory
     # in templates rendered from namespaced controllers.
-    config.action_view.prefix_partial_path_with_controller_namespace = false
+    # config.action_view.prefix_partial_path_with_controller_namespace = false
   end
 end

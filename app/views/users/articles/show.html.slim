@@ -1,7 +1,14 @@
 .row
-  .columns
-    h2
-      = title(I18n.t("app.articles.show"))
+  h2
+    = title(I18n.t("app.articles.show"))
 
+  .medium-8.columns
     dl
-      = render article
+      = render "articles/article", article: article
+
+  .medium-4.columns
+    h4 Comments
+    .comments-list
+      = render comments
+
+    = render "users/comments/form"
