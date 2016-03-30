@@ -1,0 +1,10 @@
+= simple_form_for contact, as: :contact, url: contacts_path, method: :post do |f|
+  .medium-6.columns
+    .form-inputs
+      = f.input :name, placeholder: I18n.t("app.contact.name")
+      = f.input :email, placeholder: I18n.t("app.contact.email")
+      = f.input :message, as: :text, placeholder: I18n.t("app.contact.message"), rows: 6
+
+    .form-actions
+      = f.button :submit, I18n.t("app.actions.send")
+
