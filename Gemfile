@@ -41,6 +41,7 @@ gem "responders"
 gem "rollbar"
 gem "seedbank"
 gem "stackprof"
+gem "active_model_serializers"
 
 group :staging, :production do
   gem "newrelic_rpm"
@@ -48,8 +49,8 @@ group :staging, :production do
 end
 
 group :test do
-  gem "capybara"
-  gem "capybara-webkit"
+  gem "capybara", ">= 2.5.0"
+  gem "capybara-webkit", ">= 1.7.0"
   gem "codeclimate-test-reporter", require: false
   gem "database_cleaner"
   gem "email_spec"

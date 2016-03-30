@@ -12,4 +12,7 @@ en:
       edit_title: "Edit Article"
       author_prefix: "created by "
       show: "Article"
+    comments:
+      input_message: "Your comment"
+      add_comment: "Add"
     home: "Home"
