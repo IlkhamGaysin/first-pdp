@@ -1,6 +1,5 @@
 class CommentsCreator
   include Interactor
-  delegate :comment, to: :context
 
   def call
     article = Article.find(context.article_id)
