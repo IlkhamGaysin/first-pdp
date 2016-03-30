@@ -8,7 +8,7 @@ module Users
       context = CommentsCreator.call(comment_attributes)
 
       if context.success?
-        render json: context.comment, root: false
+        render json: context.comment, root: false, serializer: CommentSerializer
       else
         render json: context.message, root: false, status: :unprocessable_entity
       end
