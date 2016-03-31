@@ -9,7 +9,9 @@
         url: registration_path(resource_name),
         html: { method: :put } do |f|
 
+      = image_tag resource.avatar.thumb.url, class: "user-avatar"
       .form-inputs
+        = f.input :avatar, as: :file
         = f.input :full_name, required: true, autofocus: true
         = f.input :email, required: true
         = f.input :password,
