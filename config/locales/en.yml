@@ -18,10 +18,9 @@ en:
       add_comment: "Add"
     contacts:
       index: "Leave us your contacts"
+      link: "Contacts"
     home: "Home"
     about: "About Us"
-    articles: "Artciles"
-    contacts: "Contacts"
     mailers:
       contact:
         subject: "An email to tech support"
