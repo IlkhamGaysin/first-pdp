@@ -19,6 +19,9 @@ en:
     contacts:
       index: "Leave us your contacts"
     home: "Home"
+    about: "About Us"
+    articles: "Artciles"
+    contacts: "Contacts"
     mailers:
       contact:
         subject: "An email to tech support"

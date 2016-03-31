@@ -1,5 +1,6 @@
 ul.left
   - if user_signed_in?
-    = active_link_to "Home", root_path, active: :exclusive, wrap_tag: :li
-    = active_link_to "Articles", articles_path, active: :exclusive, wrap_tag: :li
-  = active_link_to "Contacts", new_contact_path, active: :exclusive, wrap_tag: :li
+    = active_link_to I18n.t("app.home"), root_path, active: :exclusive, wrap_tag: :li
+    = active_link_to I18n.t("app.articles"), articles_path, active: :exclusive, wrap_tag: :li
+  = active_link_to I18n.t("app.contacts"), new_contact_path, active: :exclusive, wrap_tag: :li
+  = active_link_to I18n.t("app.about"), about_path, active: :exclusive, wrap_tag: :li
