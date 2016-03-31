@@ -8,7 +8,7 @@ doc/**/*
 vendor/bundle
 vendor/cache
 vendor/ruby
-public/uploads
+public/uploads/**/*
 .sass-cache
 ._*
 .env
