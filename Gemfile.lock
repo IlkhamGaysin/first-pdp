@@ -91,6 +91,11 @@ GEM
     capybara-webkit (1.9.0)
       capybara (>= 2.3.0, < 2.7.0)
       json
+    carrierwave (0.11.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     choice (0.2.0)
     code_analyzer (0.4.5)
       sexp_processor
@@ -209,6 +214,7 @@ GEM
       rails (>= 3.0.0)
     method_source (0.8.2)
     mime-types (2.99.1)
+    mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.0)
@@ -410,6 +416,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.5.0)
   capybara-webkit (>= 1.7.0)
+  carrierwave
   codeclimate-test-reporter
   coffee-rails
   coffeelint
@@ -439,6 +446,7 @@ DEPENDENCIES
   letter_opener
   memory_profiler
   metamagic
+  mini_magick
   newrelic_rpm
   pg
   pry-rails

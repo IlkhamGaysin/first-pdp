@@ -14,4 +14,8 @@ FactoryGirl.define do
       user.update(confirmation_sent_at: 3.days.ago)
     end
   end
+
+  trait :with_avatar do
+    avatar { Rack::Test::UploadedFile.new(File.join("#{Rails.root}/spec/fixtures/images/test_image.jpg")) }
+  end
 end
