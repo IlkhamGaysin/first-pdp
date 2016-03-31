@@ -1,4 +1,4 @@
-# Rails Base
+# FirstPDP
 
 [![Build Status](https://semaphoreci.com/api/v1/ilkham-gaysin/first-pdp/branches/master/shields_badge.svg)](https://semaphoreci.com/ilkham-gaysin/first-pdp)
 [![Code Climate](https://codeclimate.com/github/IlkhamGaysin/first-pdp/badges/gpa.svg)](https://codeclimate.com/github/IlkhamGaysin/first-pdp)
