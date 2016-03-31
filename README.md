@@ -73,16 +73,11 @@ brew bundle
   bin/server
   ```
 
-## Deployment
-
-### Heroku
-
-Deployed to [Production](https://first-pdp-practice.herokuapp.com).
 
 Continuous Integration
 -
 
-[Semaphore](https://semaphoreci.com/ilkham-gaysin/first-pdp).
+[Semaphore](https://semaphoreci.com/ilkham-gaysin/first-pdp)
 
 
 Production
