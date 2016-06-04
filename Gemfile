@@ -1,18 +1,18 @@
 source "https://rubygems.org"
 
-ruby "2.2.4"
+ruby "2.3.0"
 
-gem "rails", "4.2.5.2"
+gem "rails", "4.2.6"
 gem "pg"
 
 # assets
 gem "autoprefixer-rails"
 gem "coffee-rails"
 gem "foundation-icons-sass-rails"
-gem "foundation-rails"
+gem "foundation-rails", "~> 5.5.2.1"
 gem "jquery-rails"
-gem "sass-rails", "~> 5.0.0"
-gem "skim", git: "https://github.com/jfirebaugh/skim"
+gem "sass-rails", "~> 5.0.3"
+gem "skim"
 gem "therubyracer", platforms: :ruby
 gem "uglifier", ">= 2.7.2"
 
@@ -25,7 +25,7 @@ gem "slim"
 # all other gems
 gem "decent_decoration"
 gem "decent_exposure"
-gem "devise"
+gem "devise", "~> 3.5.4"
 gem "draper"
 gem "flamegraph"
 gem "google-analytics-rails"
@@ -58,7 +58,8 @@ group :test do
   gem "email_spec"
   gem "formulaic"
   gem "launchy"
-  gem "shoulda-matchers", require: false
+  gem "rspec-its"
+  gem "shoulda-matchers"
   gem "webmock", require: false
 end
 
@@ -71,12 +72,11 @@ group :development, :test do
   gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "faker"
-  gem "fuubar", "~> 2.0.0.rc1"
   gem "jasmine", "> 2.0"
   gem "jasmine-jquery-rails"
   gem "pry-rails"
   gem "rails_best_practices", require: false
-  gem "rspec-rails", "~> 3.0"
+  gem "rspec-rails", "~> 3.4"
   gem "rubocop", require: false
   gem "rubocop-rspec", require: false
   gem "scss_lint", require: false

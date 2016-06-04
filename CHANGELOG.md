@@ -2,7 +2,19 @@
 
 ## Unreleased
 
-- Upgrade Rails to 4.2.5.2
+- Update [rails_best_practices gem](https://github.com/railsbp/rails_best_practices)
+- Update [email_spec gem](https://github.com/email-spec/email-spec) to avoid flaky specs based on encoded html entities
+
+## 1.9 - 2016-04-22
+
+- Introduce [Rspec-Its](https://github.com/rspec/rspec-its)
+- Configure `.gitattributes` to avoid merge conflicts due to `CHANGELOG`
+- Upgrade rubocop to 0.39.0, rubocop-rspec to 1.4.1, active_link_to to 1.0.3, faker to 1.6.3, slim_lint to 0.7.2
+
+## 1.8 - 2016-03-22
+
+- Upgrade Rails to 4.2.6, Ruby to 2.3.0, Rollbar to 2.8.3, Spring to 1.6.4
+- Remove [fuubar](https://github.com/thekompanee/fuubar)
 - Show 2 slowest specs during specs run [#415](https://github.com/fs/rails-base/pull/415) [#410](https://github.com/fs/rails-base/pull/410/files)
 - Update [devise gem](https://github.com/plataformatec/devise)
 - Removed wrong underfield hint on sign_up page
@@ -11,7 +23,6 @@
 - Fix alerts closing button on iOs devices
 - Update [simple_form gem](https://github.com/plataformatec/simple_form)
 - User factory generate confirmed user by default
-- Upgrade Ruby to 2.2.4
 - Update [nokogiri gem](https://github.com/sparklemotion/nokogiri)
 
 ## 1.7 - 2015-11-27

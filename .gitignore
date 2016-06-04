@@ -9,6 +9,7 @@ vendor/bundle
 vendor/cache
 vendor/ruby
 public/uploads/**/*
+.byebug_history
 .sass-cache
 ._*
 .env
