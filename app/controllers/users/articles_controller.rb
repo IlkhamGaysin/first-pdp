@@ -1,6 +1,6 @@
 module Users
   class ArticlesController < ApplicationController
-    before_action :authorize_user!, only: %i(edit update)
+    before_action :authorize_user!, only: %i(edit update destroy)
     expose_decorated(:article, attributes: :article_attributes)
     expose(:comments, ancestor: :article)
 
@@ -21,6 +21,11 @@ module Users
 
     def update
       article.save
+      respond_with article
+    end
+
+    def destroy
+      article.destroy
       respond_with article
     end
 
