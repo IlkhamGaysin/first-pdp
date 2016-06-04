@@ -2,10 +2,10 @@
   = simple_form_for article do |f|
     .form-inputs
       = f.input :title, required: false, autofocus: true
-      = f.input :description, required: false
+      = f.input :description, as: :text, required: false
 
     .form-actions
       - if article.new_record?
-        = f.button :submit, I18n.t("app.actions.create")
+        = f.button :submit, I18n.t("app.actions.create"), class: "button tiny"
       - else
-        = f.button :submit, I18n.t("app.actions.update")
+        = f.button :submit, I18n.t("app.actions.update"), class: "button tiny"

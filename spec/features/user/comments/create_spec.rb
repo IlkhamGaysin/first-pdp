@@ -9,7 +9,7 @@ feature "Article comments" do
     visit article_path(article)
   end
 
-  scenario "User can leave comment", js: true do
+  scenario "leave comment", js: true do
     fill_in "comment_text", with: comment_attributes[:text]
 
     click_on I18n.t "app.comments.add_comment"
