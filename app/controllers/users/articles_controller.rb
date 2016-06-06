@@ -32,7 +32,7 @@ module Users
     private
 
     def authorize_user!
-      authorize article, :manage?
+      authorize article, :own_object?
     end
 
     def article_attributes

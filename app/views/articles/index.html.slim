@@ -1,10 +1,9 @@
-.row
-  .columns
-    h2
-      = title(I18n.t("app.articles.index"))
-    small.right.create-article-link
-      = link_to I18n.t("app.actions.create"), new_article_path, class: "tiny button round"
-    dl
-      = render articles
+.columns
+  h2
+    = title(I18n.t("app.articles.index"))
+  small.right.create-article-link
+    = link_to I18n.t("app.actions.create"), new_article_path, class: "tiny button round"
+  dl
+    = render articles
 
-    = paginate articles
+  = paginate articles

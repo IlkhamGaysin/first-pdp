@@ -41,6 +41,9 @@ class CreateComments
     comment = JST['comments/comment'](
       text: response.text
       author: response.author
+      remove_url: response.remove_url
+      own_object: response.own_object
+      id: response.id
     )
     @ui.commentsList.append comment
     @ui.commentField.val ''

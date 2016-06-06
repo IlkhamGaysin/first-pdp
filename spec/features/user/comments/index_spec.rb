@@ -1,11 +1,7 @@
 require "rails_helper"
 
 feature "Comments" do
-  include_context "current user signed in"
-  let!(:another_user) { create :user }
-  let!(:article) { create :article, user: current_user }
-  let!(:comment) { create :comment, article: article, user: current_user }
-  let!(:another_comment) { create :comment, article: article, user: another_user }
+  include_context "Full context with signed user"
   let(:decorated_comment) { comment.decorate }
 
   background do

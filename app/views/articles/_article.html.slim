@@ -1,9 +1,9 @@
-.column id="#{dom_id(article)}"
+.article-box id="#{dom_id(article)}"
   dt
     = article.title
   dd
     = article.description
-  em.right
+  em.left
     = article.author
 
   = render "articles/actions", article: article
