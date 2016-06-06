@@ -38,7 +38,10 @@ class CreateComments
           @handleErrors(response.responseJSON.errors)
 
   addComment: (response) =>
-    comment = JST['comments/comment']({text: response.text, author: response.author})
+    comment = JST['comments/comment'](
+      text: response.text
+      author: response.author
+    )
     @ui.commentsList.append comment
     @ui.commentField.val ''
 
