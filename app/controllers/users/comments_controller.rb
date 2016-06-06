@@ -2,22 +2,20 @@ module Users
   class CommentsController < ApplicationController
     respond_to :json
 
-    expose(:article)
+    expose(:article, model: :article, finder_parameter: :article_id)
+    expose(:comment, attributes: :comment_attributes)
 
     def create
-      context = CommentsCreator.call(comment_attributes)
-
-      if context.success?
-        render json: context.comment, root: false, serializer: CommentSerializer
-      else
-        render json: context.message, root: false, status: :unprocessable_entity
-      end
+      comment.user = current_user
+      comment.article = article
+      comment.save
+      respond_with comment, location: -> { false }
     end
 
     private
 
     def comment_attributes
-      params.require(:comment).permit(:text, :article_id)
+      params.require(:comment).permit(:text)
     end
   end
 end
