@@ -1,8 +1,15 @@
-.row
+.row.comment-box id="#{dom_id(comment)}"
   .column
     .comment-text
       = comment.text
-    .column.comment-author
-      em.medium-sized-font.right
+    .column.comment-footer
+      em.medium-sized-font.left
         = comment.author
+
+      - if comment.own_object?
+        .right.comment-remove-link-box
+          = link_to "Remove",
+            "#",
+            class: "button tiny js-remove-comment-link",
+            data: { remove_url: comment.remove_url }
     hr

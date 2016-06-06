@@ -1,8 +1,13 @@
-.row
+.row.comment-box id=("comment_#{@id}")
   .column
     .comment-text
       | #{@text}
-    .column.comment-author
-      em.medium-sized-font.right
+    .column.comment-footer
+      em.medium-sized-font.left
         | #{@author}
+
+      - if @own_object
+        .right.comment-remove-link-box
+          a.button.tiny.js-remove-comment-link href=("#") data-remove-url=("#{@remove_url}")
+            | Remove
     hr

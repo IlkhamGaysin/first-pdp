@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   scope module: "users" do
     resources :articles, only: %i(show new create edit update destroy)
-    resources :comments, only: %i(create)
+    resources :comments, only: %i(create destroy)
   end
 
   resources :articles, only: %i(index)
