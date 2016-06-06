@@ -28,25 +28,26 @@ class CreateComments
       data:
         comment:
           text: @commentContent()
-          article_id: @articleId()
+        article_id: @articleId()
 
       success: (response) =>
         @addComment(response)
 
       error: (response) =>
-        @handleErrors(response)
+        if response.responseJSON && response.responseJSON.errors
+          @handleErrors(response.responseJSON.errors)
 
   addComment: (response) =>
-    comment = JST['comments/comment']({text: response.text})
+    comment = JST['comments/comment']({text: response.text, author: response.author})
     @ui.commentsList.append comment
     @ui.commentField.val ''
 
-  handleErrors: (response)=>
-    errors = response.responseJSON.text
-    @addError(errors) if errors
+  handleErrors: (errors)=>
+    field_errors = errors.text
+    @addError(field_errors) if field_errors
 
-  addError: (errors) =>
-    error = JST['comments/error']({message: errors[0]})
+  addError: (field_errors) =>
+    error = JST['comments/error']({message: field_errors[0]})
     @ui.errorConetainer.html(error)
     @ui.commentField.parent('.input-group').addClass 'error'
 

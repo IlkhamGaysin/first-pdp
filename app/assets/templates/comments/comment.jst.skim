@@ -1,4 +1,8 @@
-.column
-  em.medium-sized-font
-    | #{@text}
-  hr
+.row
+  .column
+    .comment-text
+      | #{@text}
+    .column.comment-author
+      em.medium-sized-font.right
+        | #{@author}
+    hr

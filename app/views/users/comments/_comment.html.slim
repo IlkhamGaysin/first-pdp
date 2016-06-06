@@ -1,4 +1,8 @@
-.column
-  em.medium-sized-font
-    = comment.text
-  hr
+.row
+  .column
+    .comment-text
+      = comment.text
+    .column.comment-author
+      em.medium-sized-font.right
+        = comment.author
+    hr

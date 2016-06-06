@@ -2,7 +2,7 @@ module Users
   class ArticlesController < ApplicationController
     before_action :authorize_user!, only: %i(edit update destroy)
     expose_decorated(:article, attributes: :article_attributes)
-    expose(:comments, ancestor: :article)
+    expose_decorated(:comments, ancestor: :article) { |scope| scope.includes(:user) }
 
     def new
     end
