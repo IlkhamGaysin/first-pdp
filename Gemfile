@@ -44,6 +44,7 @@ gem "stackprof"
 gem "active_model_serializers"
 gem "carrierwave"
 gem "mini_magick"
+gem "fog"
 
 group :staging, :production do
   gem "newrelic_rpm"
