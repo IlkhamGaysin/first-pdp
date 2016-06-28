@@ -1,5 +1,5 @@
 module Users
-  class CommentsController < Users::BaseController
+  class CommentsController < BaseController
     before_action :authorize_user!, only: %i(destroy)
 
     expose_decorated(:article)

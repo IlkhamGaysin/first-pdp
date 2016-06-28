@@ -1,5 +1,5 @@
 module Users
-  class ArticlesController < Users::BaseController
+  class ArticlesController < BaseController
     before_action :authorize_user!, only: %i(edit update destroy)
 
     expose_decorated(:article, attributes: :article_attributes)
