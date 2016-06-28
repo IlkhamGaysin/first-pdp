@@ -11,16 +11,16 @@ feature "Create Article" do
   subject { page }
 
   context "new form" do
-    it { is_expected.to have_content I18n.t "app.articles.new_title" }
+    it { is_expected.to have_content "New Article" }
   end
 
   context "create action" do
     before do
       fill_form(:user, article_attributes)
-      click_on I18n.t "app.actions.create"
+      click_on "Create"
     end
 
-    it { is_expected.to have_content I18n.t "app.articles.index" }
+    it { is_expected.to have_content "Articles" }
     it { is_expected.to have_content article_attributes[:title] }
     it { is_expected.to have_content "Article was successfully created." }
   end

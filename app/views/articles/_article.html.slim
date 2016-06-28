@@ -1,10 +1,14 @@
 .article-box id="#{dom_id(article)}"
-  dt
-    = article.title
+  = link_to article, class: "article-title" do
+    dt
+      = article.title
+  end
+
   dd
     = article.description
   em.left
     = article.author
 
-  = render "articles/actions", article: article
+  - if user_signed_in?
+    = render "actions", article: article
   hr

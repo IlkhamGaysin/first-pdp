@@ -1,0 +1,3 @@
+= simple_form_for [article, comment], data: { remote: true, behavior: "fragments" } do |f|
+  = f.input :text, as: :text, label: false, placeholder: "Your comment"
+  = f.button :submit, class: "tiny right"

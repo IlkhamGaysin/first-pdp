@@ -5,8 +5,4 @@ class ApplicationPolicy
     @user = user
     @record = record.to_model
   end
-
-  def own_object?
-    record.user == user
-  end
 end

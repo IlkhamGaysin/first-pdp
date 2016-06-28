@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "Comments" do
-  include_context "Full context with signed user"
+  include_context "Full context data"
   let(:decorated_comment) { comment.decorate }
 
   background do
@@ -22,6 +22,6 @@ feature "Comments" do
   end
 
   context "links" do
-    it { is_expected.to have_content I18n.t("app.comments.add_comment") }
+    it { is_expected.not_to have_content "Add" }
   end
 end

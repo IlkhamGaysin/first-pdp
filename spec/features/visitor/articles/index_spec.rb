@@ -1,10 +1,7 @@
 require "rails_helper"
 
 feature "Articles list" do
-  include_context "current user signed in"
-  let!(:another_user) { create :user }
-  let!(:article) { create :article, user: current_user }
-  let!(:another_article) { create :article, user: another_user }
+  include_context "Full context data"
   let(:decorated_article) { article.decorate }
 
   background do
@@ -13,9 +10,8 @@ feature "Articles list" do
 
   subject { page }
 
-  context "links" do
-    it { is_expected.to have_content I18n.t "app.articles.index" }
-    it { is_expected.to have_content I18n.t "app.actions.create" }
+  context "link" do
+    it { is_expected.not_to have_content "Create" }
   end
 
   context "own article" do

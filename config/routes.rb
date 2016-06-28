@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   get "/about", to: "pages#about"
 
   scope module: "users" do
-    resources :articles, only: %i(show new create edit update destroy)
-    resources :comments, only: %i(create destroy)
+    resources :articles, only: %i(new create edit update destroy) do
+      resources :comments, only: %i(create destroy)
+    end
   end
 
-  resources :articles, only: %i(index)
+  resources :articles, only: %i(index show)
   resources :contacts, only: %i(new create)
 end

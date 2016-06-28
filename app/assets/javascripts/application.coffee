@@ -9,7 +9,7 @@
 #= require foundation
 #= require current_user
 #= require skim
-#= require_tree ../templates
+#= require fragments
 #= require_tree .
 
 $(document).foundation()

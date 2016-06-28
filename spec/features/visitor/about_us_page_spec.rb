@@ -6,7 +6,7 @@ feature "About" do
   end
 
   scenario "Visitor can show about us page" do
-    click_link I18n.t "app.about"
-    expect(page).to have_content I18n.t "app.about"
+    click_link "About Us"
+    expect(page).to have_content "About Us"
   end
 end

@@ -1,8 +1,8 @@
 module Users
-  class ArticlesController < ApplicationController
+  class ArticlesController < Users::BaseController
     before_action :authorize_user!, only: %i(edit update destroy)
+
     expose_decorated(:article, attributes: :article_attributes)
-    expose_decorated(:comments, ancestor: :article) { |scope| scope.includes(:user) }
 
     def new
     end
@@ -10,10 +10,7 @@ module Users
     def create
       article.user = current_user
       article.save
-      respond_with article, location: -> { articles_path }
-    end
-
-    def show
+      respond_with article, location: articles_path
     end
 
     def edit
@@ -32,7 +29,7 @@ module Users
     private
 
     def authorize_user!
-      authorize article, :own_object?
+      authorize article, :manage?
     end
 
     def article_attributes

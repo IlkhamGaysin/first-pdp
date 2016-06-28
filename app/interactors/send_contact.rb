@@ -1,11 +1,11 @@
-class ContactMailerSender
+class SendContact
   include Interactor
 
   def call
-    ContactMailer.notification(
+    ApplicationMailer.contact_email(
       context.name,
       context.email,
       context.message
-    ).deliver_later
+    ).deliver_now
   end
 end

@@ -1,11 +1,8 @@
 .medium-6.columns
   = simple_form_for article do |f|
     .form-inputs
-      = f.input :title, required: false, autofocus: true
-      = f.input :description, as: :text, required: false
+      = f.input :title, autofocus: true
+      = f.input :description, as: :text
 
     .form-actions
-      - if article.new_record?
-        = f.button :submit, I18n.t("app.actions.create"), class: "button tiny"
-      - else
-        = f.button :submit, I18n.t("app.actions.update"), class: "button tiny"
+      = f.button :submit

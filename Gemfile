@@ -45,6 +45,7 @@ gem "active_model_serializers"
 gem "carrierwave"
 gem "mini_magick"
 gem "fog"
+gem "fragments.js", github: "fs/fragments.js"
 
 group :staging, :production do
   gem "newrelic_rpm"
