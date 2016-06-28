@@ -8,20 +8,18 @@ feature "Articles list" do
     visit articles_path
   end
 
-  subject { page }
-
-  context "link" do
-    it { is_expected.not_to have_content "Create" }
+  scenario "Visitor doesn't see create link" do
+    expect(page).not_to have_content "Create"
   end
 
-  context "own article" do
-    it { is_expected.to have_content article.title }
-    it { is_expected.to have_content article.description }
-    it { is_expected.to have_content decorated_article.author }
+  scenario "Visitor sees own article info" do
+    expect(page).to have_content article.title
+    expect(page).to have_content article.description
+    expect(page).to have_content decorated_article.author
   end
 
-  context "another article" do
-    it { is_expected.to have_content another_article.title }
-    it { is_expected.to have_content another_article.description }
+  scenario "Visitor sees another article info" do
+    expect(page).to have_content another_article.title
+    expect(page).to have_content another_article.description
   end
 end

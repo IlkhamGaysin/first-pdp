@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Remove Own Article" do
+feature "Remove Article" do
   include_context "Full context data"
   let(:decorated_article) { article.decorate }
 
@@ -9,31 +9,28 @@ feature "Remove Own Article" do
     visit articles_path
   end
 
-  subject { page }
-
-  context "remove action" do
+  feature "User remove own article" do
     before do
       within "#article_#{article.id}" do
         click_link "Remove"
       end
     end
 
-    context "doesn't see removed article" do
-      it { is_expected.not_to have_content article.title }
-      it { is_expected.not_to have_content article.description }
+    scenario "doesn't see removed article" do
+      expect(page).not_to have_content article.title
+      expect(page).not_to have_content article.description
     end
 
-    context "see another article" do
-      it { is_expected.to have_content another_article.title }
-      it { is_expected.to have_content another_article.description }
+    scenario "redirected on articles page" do
+      expect(current_url).to eql articles_url
     end
 
-    context "see successfully message" do
-      it { is_expected.to have_content "Article was successfully destroyed." }
+    scenario "sees successfully message" do
+      expect(page).to have_content "Article was successfully destroyed."
     end
   end
 
-  context "see remove link" do
+  feature "Permissions of user to remove article links" do
     let(:object) { article }
     let(:another_object) { another_article }
     let(:object_name) { article.model_name.singular }

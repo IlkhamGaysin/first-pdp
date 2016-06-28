@@ -10,7 +10,7 @@ feature "Article comments" do
     visit article_path(article)
   end
 
-  scenario "leave comment", js: true do
+  scenario "User leave comment", js: true do
     fill_in "comment_text", with: comment_attributes[:text]
     click_on "Add"
     wait_for_ajax

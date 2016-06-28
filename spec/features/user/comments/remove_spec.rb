@@ -8,18 +8,16 @@ feature "Remove Comment" do
     visit article_path(article)
   end
 
-  subject { page }
-
-  scenario "action" do
+  scenario "User remove own comment" do
     within "#comment_#{comment.id}" do
       click_link "Remove"
     end
 
-    is_expected.to have_content another_comment.text
-    is_expected.not_to have_content comment.text
+    expect(page).to have_content another_comment.text
+    expect(page).not_to have_content comment.text
   end
 
-  context "see remove link" do
+  feature "Permissions of user to remove comment link" do
     let(:object) { comment }
     let(:another_object) { another_comment }
     let(:object_name) { comment.model_name.singular }

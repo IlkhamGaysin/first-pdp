@@ -8,20 +8,16 @@ feature "Create Article" do
     visit new_article_path
   end
 
-  subject { page }
-
-  context "new form" do
-    it { is_expected.to have_content "New Article" }
+  scenario "User sees new article form" do
+    expect(page).to have_content "New Article"
   end
 
-  context "create action" do
-    before do
-      fill_form(:user, article_attributes)
-      click_on "Create"
-    end
+  scenario "User create new article" do
+    fill_form(:user, article_attributes)
+    click_on "Create"
 
-    it { is_expected.to have_content "Articles" }
-    it { is_expected.to have_content article_attributes[:title] }
-    it { is_expected.to have_content "Article was successfully created." }
+    expect(page).to have_content "Articles"
+    expect(page).to have_content article_attributes[:title]
+    expect(page).to have_content "Article was successfully created."
   end
 end

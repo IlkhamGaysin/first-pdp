@@ -8,18 +8,14 @@ feature "User Article" do
     visit article_path(article)
   end
 
-  subject { page }
+  scenario "Visitor sees own article info" do
+    expect(page).to have_content article.title
+    expect(page).to have_content article.description
+    expect(page).to have_content decorated_article.author
+  end
 
-  context "info" do
-    context "own" do
-      it { is_expected.to have_content article.title }
-      it { is_expected.to have_content article.description }
-      it { is_expected.to have_content decorated_article.author }
-    end
-
-    context "another" do
-      it { is_expected.not_to have_content another_article.title }
-      it { is_expected.not_to have_content another_article.description }
-    end
+  scenario "Visitor doesn't see another article info" do
+    expect(page).not_to have_content another_article.title
+    expect(page).not_to have_content another_article.description
   end
 end
