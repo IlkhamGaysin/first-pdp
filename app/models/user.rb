@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  mount_uploader :avatar, AvatarUploader
+  attachment :avatar
 
   devise :database_authenticatable, :registerable, :confirmable,
     :recoverable, :rememberable, :trackable, :validatable

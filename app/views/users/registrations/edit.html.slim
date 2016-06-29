@@ -9,13 +9,24 @@
         url: registration_path(resource_name),
         html: { method: :put } do |f|
 
-      - if resource.avatar.present?
-        .row
-          .small-5.small-centered.columns.user-avatar-wrapper
-            = image_tag resource.avatar.large.url, class: "user-avatar th"
-
       .form-inputs
-        = f.input :avatar, as: :file
+        .columns.edit-profile-photo
+          .wrap.small-5.small-centered.columns.user-avatar-wrapper
+            = attachment_image_tag(resource, :avatar, :fill, 150, 200, format: "jpg",
+                fallback: "defaultavatar.jpg", id: "avatar-image", class: "user-avatar th")
+          .row.actions
+            .change.left
+              = f.input :avatar, as: :attachment, direct: true, presigned: true,
+                  input_html: { data: { "file-preview" => { selector: "avatar-image",
+                    remove_selector: "[data-file-remove]" } } }
+
+            .remove
+              = link_to "Remove avatar", "#",
+                  data: { "file-remove" => { selector: "avatar-image", hidden: "user_remove_avatar",
+                    file_input: "user_avatar", default: image_path("defaultavatar.jpg") } },
+                  class: "button tiny alert #{resource.avatar.nil? ? 'hidden' : ''}"
+              = f.check_box :remove_avatar, class: "hidden"
+
         = f.input :full_name, required: true, autofocus: true
         = f.input :email, required: true
         = f.input :password,
