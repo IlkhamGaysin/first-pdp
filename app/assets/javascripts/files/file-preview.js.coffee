@@ -20,7 +20,8 @@
             .attr("src", e.target.result)
             .attr("width", @options.width)
 
-          $(@options.remove_selector).trigger("remove-#{@options.selector}:reset")
+          $(@options.remove_selector)
+            .trigger("remove-#{@options.selector}:reset")
 
         reader.readAsDataURL input.files[0]
 

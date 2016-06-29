@@ -11,9 +11,10 @@
         e.preventDefault()
         @_remove()
 
-      $("body").on "remove-#{@options.selector}:reset", "[data-" + @dataKey + "]", (e) =>
-        @element.removeClass("hidden")
-        @_reset()
+      $("body")
+        .on "remove-#{@options.selector}:reset", "[data-#{@dataKey}]", (e) =>
+          @element.removeClass("hidden")
+          @_reset()
 
     _remove: =>
       $("#" + @options.selector).attr("src", @options.default)
