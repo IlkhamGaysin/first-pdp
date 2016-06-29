@@ -1,5 +1,4 @@
 (($) ->
-
   class FilePreview
     constructor: (element) ->
       @dataKey = "file-preview"

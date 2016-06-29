@@ -1,5 +1,4 @@
 (($) ->
-
   class FileRemove
     constructor: (element) ->
       @dataKey = "file-remove"
