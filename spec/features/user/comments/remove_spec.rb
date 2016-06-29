@@ -1,32 +1,28 @@
 require "rails_helper"
 
 feature "Remove Comment" do
-  include_context "Full context with signed user"
+  include_context "Full context data"
 
   background do
+    login_as current_user
     visit article_path(article)
   end
 
-  subject { page }
-
-  scenario "action", js: true do
+  scenario "User remove own comment" do
     within "#comment_#{comment.id}" do
-      click_on I18n.t "app.actions.remove"
+      click_link "Remove"
     end
-    wait_for_ajax
-    is_expected.to have_content another_comment.text
-    is_expected.not_to have_content comment.text
+
+    expect(page).to have_content another_comment.text
+    expect(page).not_to have_content comment.text
   end
 
-  scenario "see remove link" do
-    within "#comment_#{comment.id}" do
-      is_expected.to have_content I18n.t("app.actions.remove")
-    end
-  end
+  feature "Permissions of user to remove comment link" do
+    let(:object) { comment }
+    let(:another_object) { another_comment }
+    let(:object_name) { comment.model_name.singular }
+    let(:checking_link) { "Remove" }
 
-  scenario "doesn't see remove link" do
-    within "#comment_#{another_comment.id}" do
-      is_expected.not_to have_content I18n.t("app.actions.remove")
-    end
+    it_behaves_like "permissions to links"
   end
 end

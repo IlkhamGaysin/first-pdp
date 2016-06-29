@@ -1,10 +1,10 @@
-ul.button-group.round.right
-  - if action_name == "index"
+- if policy(article).manage?
+  ul.button-group.round.right
     li
-      = link_to I18n.t("app.actions.show"), article_path(article), class: "button tiny"
-
-  - if policy(article).own_object?
+      = link_to "Edit", edit_article_path(article), class: "button tiny"
     li
-      = link_to I18n.t("app.actions.edit"), edit_article_path(article), class: "button tiny"
-    li
-      = link_to I18n.t("app.actions.remove"), article_path(article), class: "button tiny", method: :delete
+      = link_to "Remove",
+        article_path(article),
+        class: "button tiny",
+        method: :delete,
+        data: { confirm: "Are you sure?" }

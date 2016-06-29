@@ -6,6 +6,6 @@ feature "Home" do
   end
 
   scenario "Visitor can show home page" do
-    expect(page).to have_content I18n.t "app.home"
+    expect(page).to have_content "Home"
   end
 end

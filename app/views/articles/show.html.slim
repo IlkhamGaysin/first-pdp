@@ -1,0 +1,11 @@
+h2
+  = title("Article")
+
+.medium-8.columns
+  dl
+    = render article
+
+.medium-4.columns
+  h4 Comments
+  .comments-list
+    = render "comments/discussion", comments: comments

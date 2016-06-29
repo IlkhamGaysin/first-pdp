@@ -6,10 +6,11 @@
       em.medium-sized-font.left
         = comment.author
 
-      - if comment.own_object?
+      - if policy(comment).manage?
         .right.comment-remove-link-box
           = link_to "Remove",
-            "#",
-            class: "button tiny js-remove-comment-link",
-            data: { remove_url: comment.remove_url }
+            article_comment_path(article, comment),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "button tiny"
     hr

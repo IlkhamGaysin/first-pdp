@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature Contact do
+feature SendContact do
   feature "#call" do
     let(:contact_attributes) { attributes_for(:contact) }
 
@@ -12,10 +12,10 @@ feature Contact do
       }
     end
 
-    subject(:context) { described_class.new(params).valid? }
+    subject(:context) { described_class.call(params) }
 
-    scenario "Create comments for article" do
-      expect(subject).to be_truthy
+    scenario "Mailers count" do
+      expect { context }.to change { ActionMailer::Base.deliveries.count }.by(1)
     end
   end
 end

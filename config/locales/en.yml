@@ -1,31 +1,14 @@
 en:
   app:
     name: "FirstPDP"
-    actions:
-      create: "Create"
-      edit: "Edit"
-      show: "Show"
-      update: "Update"
-      send: "Send"
-      remove: "Remove"
     articles:
-      index: "Articles"
-      new_title: "New Article"
-      edit_title: "Edit Article"
       author_prefix: "created by "
-      show: "Article"
-    comments:
-      input_message: "Your comment"
-      add_comment: "Add"
-    contacts:
-      index: "Leave us your contacts"
-      link: "Contacts"
-    home: "Home"
-    about: "About Us"
-    mailers:
+  helpers:
+    submit:
+      article:
+        create: "Create"
+        update: "Update"
       contact:
-        subject: "An email to tech support"
-    contact:
-      email: "Email"
-      message: "Message"
-      name: "Name"
+        create: "Send"
+      comment:
+        create: "Add"
