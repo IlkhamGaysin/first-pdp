@@ -6,6 +6,12 @@
   font-size: 95%;
 }
 
-.user-avatar {
-  margin-left: 5%;
+.edit-profile-photo {
+  .user-avatar {
+    margin-left: 5%;
+  }
+
+  .actions {
+    margin-top: 1em;
+  }
 }

@@ -10,6 +10,8 @@
 #= require current_user
 #= require skim
 #= require fragments
+#= require refile
+#= require_tree ./files
 #= require_tree .
 
 $(document).foundation()

@@ -2,7 +2,6 @@ class User
   class ParameterSanitizer < Devise::ParameterSanitizer
     USER_PARAMS = %i(
       full_name
-      avatar
       email
       password
       password_confirmation
@@ -13,7 +12,7 @@ class User
     end
 
     def account_update
-      default_params.permit(USER_PARAMS)
+      default_params.permit(USER_PARAMS, :avatar, :remove_avatar)
     end
   end
 end

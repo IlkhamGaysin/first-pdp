@@ -3,7 +3,7 @@ ul.right
     li.has-dropdown
       a.user-dropdown(href="#")
         - if current_user.avatar.present?
-          = image_tag current_user.avatar.thumb.url, class: "avatar-image-header"
+          = image_tag attachment_url(current_user, :avatar, :fill, 41, 41, format: "jpg")
         - else
           = current_user.full_name_with_email
 
