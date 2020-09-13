@@ -1,5 +1,5 @@
 # FirstPDP
-[![Build Status](https://semaphoreci.com/api/v1/ilkham-gaysin/first-pdp/branches/master/shields_badge.svg)](https://semaphoreci.com/ilkham-gaysin/first-pdp)
+[![Build Status](https://semaphoreci.com/api/v1/ilkhamgaysin/first-pdp/branches/master/shields_badge.svg)](https://semaphoreci.com/ilkhamgaysin/first-pdp)
 [![Code Climate](https://codeclimate.com/github/IlkhamGaysin/first-pdp/badges/gpa.svg)](https://codeclimate.com/github/IlkhamGaysin/first-pdp)
 [![Test Coverage](https://codeclimate.com/github/IlkhamGaysin/first-pdp/badges/coverage.svg)](https://codeclimate.com/github/IlkhamGaysin/first-pdp/coverage)
 
